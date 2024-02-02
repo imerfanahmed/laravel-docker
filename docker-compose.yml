@@ -1,5 +1,5 @@
 version: '3'
-name: laravel-project
+name: team-skadoosh
 
 services:
 
@@ -66,24 +66,24 @@ services:
     ####################################################################################################
     # phpMyAdmin
     ####################################################################################################
-    phpmyadmin:
-        image: phpmyadmin/phpmyadmin
-        ports:
-            - 8080:80
-        links:
-            - db
-        environment:
-            PMA_HOST: db
-            PMA_PORT: 3306
-            PMA_ARBITRARY: 1
-        volumes:
-            - .docker/phpmyadmin/sessions:/sessions
+    # phpmyadmin:
+    #     image: phpmyadmin/phpmyadmin
+    #     ports:
+    #         - 8080:80
+    #     links:
+    #         - db
+    #     environment:
+    #         PMA_HOST: db
+    #         PMA_PORT: 3306
+    #         PMA_ARBITRARY: 1
+    #     volumes:
+    #         - .docker/phpmyadmin/sessions:/sessions
 
     ####################################################################################################
     # Mailpit
     ####################################################################################################
-    mail:
-        image: axllent/mailpit:latest
-        ports:
-        - 8025:8025
-        - 1025:1025
+    # mail:
+    #     image: axllent/mailpit:latest
+    #     ports:
+    #     - 8025:8025
+    #     - 1025:1025
