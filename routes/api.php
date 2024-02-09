@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -18,7 +19,16 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('users/{id}', function ($id) {
-    return response()->json(['id' => $id])->setStatusCode(201);
+Route::get('/books', function (Request $request) {
+    $books = User::all();
+    $response = [
+        'status' => '200',
+        'body' => $books,
+    ];
+    //return a json response
+    return response()->json($response);
+});
 
+Route::get('/books/{id}', function (Request $request,$id) {
+    dd($id);
 });
